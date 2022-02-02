@@ -22,9 +22,9 @@ const App = () => {
     <div
       className={
         typeof weather.main !== "undefined"
-          ? weather.main === ("rain" || "shower rain" || "thunderstorm")
+          ? weather.weather[0].main === ("Rain" || "Drizzle" || "Thunderstorm")
             ? "app rain"
-            : weather.main === "snow"
+            : weather.weather[0].main === "Snow"
             ? "app snow"
             : "app default"
           : "app default"
@@ -39,11 +39,12 @@ const App = () => {
             </div>
             <div className="weather-details">
               <div className="icon">
-                {weather.main === ("rain" || "shower rain" || "thunderstorm")
+                {weather.weather[0].main ===
+                ("Rain" || "Drizzle" || "Thunderstorm")
                   ? "🌧"
-                  : weather.main === "snow"
+                  : weather.weather[0].main === "Snow"
                   ? "🌨"
-                  : weather.main === "clear sky"
+                  : weather.weather[0].main === "Clear"
                   ? "☀️"
                   : "⛅️"}
               </div>
