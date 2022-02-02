@@ -16,6 +16,9 @@ A simple weather web application built with React.
 **When it's raining in the searched city**
 ![Raining City](https://github.com/jjwlee94/weather-app/blob/master/docs/rain-city.png)
 
+**When it's snowing in the searched city**
+![Raining City](https://github.com/jjwlee94/weather-app/blob/master/docs/snow-city.png)
+
 ## Getting Started
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
