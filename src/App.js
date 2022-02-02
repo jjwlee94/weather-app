@@ -1,33 +1,52 @@
 import React, { useState } from "react";
+import "./App.css";
 
 const apiKey = process.env.REACT_APP_WEATHER_API_KEY;
 
 const App = () => {
-  const [query, setQuery] = useState("");
+  const [city, setCity] = useState("");
   const [weather, setWeather] = useState({});
 
   const search = () => {
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${query}&units=metric&APPID=${apiKey}`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
     fetch(url)
       .then((res) => res.json())
       .then((result) => {
         setWeather(result);
-        setQuery("");
+        setCity("");
         console.log(result);
       });
   };
 
   return (
-    <div className="app">
+    <div
+      className={
+        typeof weather.main !== "undefined"
+          ? weather.main === ("rain" || "shower rain" || "thunderstorm")
+            ? "app rain"
+            : weather.main === "snow"
+            ? "app snow"
+            : "app default"
+          : "app default"
+      }>
       <main>
         {typeof weather.main !== "undefined" ? (
-          <div>
-            <div className="location-box">
-              <div className="location">
+          <div className="location-box">
+            <div className="location">
+              <div className="city">
                 {weather.name}, {weather.sys.country}
               </div>
             </div>
-            <div className="weather-box">
+            <div className="weather-details">
+              <div className="icon">
+                {weather.main === ("rain" || "shower rain" || "thunderstorm")
+                  ? "🌧"
+                  : weather.main === "snow"
+                  ? "🌨"
+                  : weather.main === "clear sky"
+                  ? "☀️"
+                  : "⛅️"}
+              </div>
               <div className="temp">{Math.round(weather.main.temp)}&deg;C</div>
             </div>
           </div>
@@ -39,8 +58,8 @@ const App = () => {
             type="text"
             className="search-bar"
             placeholder="Enter a City"
-            onChange={(e) => setQuery(e.target.value)}
-            value={query}
+            onChange={(e) => setCity(e.target.value)}
+            value={city}
           />
           <button onClick={search}>Search</button>
         </div>

@@ -1,38 +1,60 @@
-.App {
+.app {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  font-family: "JetBrains Mono", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app.default {
+  background-image: url("./docs/default.jpg");
+  background-size: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app.rain {
+  background-image: url("./docs/rain.jpg");
+  background-size: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app.snow {
+  background-image: url("./docs/snow.jpg");
+  background-size: 100%;
+}
+
+.app .location {
+  padding: 1rem;
+  font-size: 2rem;
+  color: black;
+}
+
+.app .weather-details {
+  font-size: 2rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.app .search-box {
+  padding: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+main {
+  padding: 2rem;
+  background-color: white;
+  opacity: 0.7;
+}
+
+input {
+  font-family: "JetBrains Mono", sans-serif;
+  padding: 0.5rem;
+  margin-right: 0.25rem;
+}
+
+button {
+  font-family: "JetBrains Mono", sans-serif;
+  padding: 0.5rem;
+  margin-left: 0.25rem;
 }
