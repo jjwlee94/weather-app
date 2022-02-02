@@ -49,6 +49,9 @@ const App = () => {
               </div>
               <div className="temp">{Math.round(weather.main.temp)}&deg;C</div>
             </div>
+            <div className="comment">
+              {weather.main.temp < 0 ? "It's cold today! Stay warm 🧣" : ""}
+            </div>
           </div>
         ) : (
           ""
