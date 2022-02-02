@@ -16,7 +16,7 @@ A simple weather web application built with React.
 **When it's raining in the searched city**
 ![Raining City](https://github.com/jjwlee94/weather-app/blob/master/docs/rain-city.png)
 
-## Getting Started with Create React App
+## Getting Started
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -29,7 +29,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 - React
 
-### Learn More
+## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
