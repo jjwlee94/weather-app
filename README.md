@@ -1,6 +1,6 @@
 # Weather App
 
-A simple weather web application built with React.
+A simple weather web application built with React using the OpenWeatherMap API.
 Deployment: https://weather-miniproject.netlify.app/
 
 ## Final Product
